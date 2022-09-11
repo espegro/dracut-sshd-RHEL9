@@ -42,10 +42,16 @@ GRUB_CMDLINE_LINUX="resume=/dev/mapper/rl-swap rd.luks.uuid=luks-XXXXXXXXXXXXXXX
 ```
 
 The added part is rd.neednet=1 and the rest of the line.
-10.0.0.199 is the static ip of the host
-10.0.0.1 is the gateway
-hostname is the nostname
-eno1 is the name of the network device
+
+*10.0.0.199* is the static ip of the host
+
+*10.0.0.1* is the gateway
+
+*hostname* is the hostname
+
+*eno1* is the name of the network device
+
+For more details see [Configuring IP Networking from the Kernel Command line](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/sec-configuring_ip_networking_from_the_kernel_command_line)
 
 Update grub config
 ```
