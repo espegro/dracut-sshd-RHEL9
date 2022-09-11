@@ -1,6 +1,6 @@
 # dracut-sshd-RHEL9
 ## dracut-sshd setup for RHEL9 / Rocky9
-This setup is tested on a Rocky Linux 9 machine.
+This setup is tested on a Rocky Linux 9 machine with encrypted disk set up during install.
 
 ### 1. Enable copr repo
 ```
