@@ -81,6 +81,20 @@ initramfs-ssh:/root#
 
 If you press arrow up and enter you should get a prompt to enter the LUKS decrypt key. After a correct key is entered, you will loose connection and the boot will continue as normal.
 
+The unlock process is scriptable.
+
+Put this in a file *unlock-script*
+```
+systemd-tty-ask-password-agent
+UNLOCK_PASSWORD
+```
+
+And run:
+```
+$ echo unlock-script | ssh -i privatekey_for_root_on_host root@10.0.0.199
+```
+
+
 If you change the public key you need to rerun the dracut -v -f step.
 If you change ip address you need to rerun the grub step to reflect the changes. 
 
