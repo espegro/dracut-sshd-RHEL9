@@ -55,7 +55,7 @@ Update grub config
 
 Reboot!
 
-### 5. Test the setup
+### 6. Test the setup
 After reboot ssh in to your host as root from another host
 
 ```
@@ -76,3 +76,4 @@ initramfs-ssh:/root#
 If you press arrow up and enter you should get a prompt to enter the LUKS decrypt key. After a correct key is entered, you will loose connection and the boot will continue as normal.
 
 If you change the public key you need to rerun the dracut -v -f step.
+If you change ip address you need to rerun the grub step to reflect the changes. 
