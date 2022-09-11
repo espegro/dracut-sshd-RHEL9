@@ -83,3 +83,9 @@ If you press arrow up and enter you should get a prompt to enter the LUKS decryp
 
 If you change the public key you need to rerun the dracut -v -f step.
 If you change ip address you need to rerun the grub step to reflect the changes. 
+
+## Links
+
+* [dracut-sshd](https://github.com/gsauthof/dracut-sshd)
+* [dracut COPR repo](https://copr.fedorainfracloud.org/coprs/gsauthof/dracut-sshd/)
+
