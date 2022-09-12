@@ -77,6 +77,10 @@ This shell will terminate automatically a few seconds after the
 unlocking process has succeeded and when the boot proceeds.  ￼
 
 initramfs-ssh:/root# 
+initramfs-ssh:/root# systemd-tty-ask-password-agent
+🔐 Please enter passphrase for disk Logical_Volume (luks-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX): *********************** 
+initramfs-ssh:/root# Connection to 10.0.0.199.240 closed by remote host.
+Connection to 129.240.255.180 closed.
 ```
 
 If you press arrow up and enter you should get a prompt to enter the LUKS decrypt key. After a correct key is entered, you will loose connection and the boot will continue as normal.
@@ -97,6 +101,16 @@ $ echo unlock-script | ssh -i privatekey_for_root_on_host root@10.0.0.199
 
 If you change the public key you need to rerun the dracut -v -f step.
 If you change ip address you need to rerun the grub step to reflect the changes. 
+
+If you want to change the sshd setup for the early boot change */usr/lib/dracut/modules.d/46sshd/sshd_config* 
+
+Eg. crypto hardening - add these lines
+```
+KexAlgorithms sntrup761x25519-sha512@openssh.com,curve25519-sha256@libssh.org
+Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes256-ctr
+MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com
+HostKeyAlgorithms -ecdsa-sha2-nistp256,ssh-rsa
+```
 
 ## Links
 
