@@ -1,4 +1,7 @@
 # dracut-sshd-RHEL9
+
+This setup is to have full encrypted RHEL9/Rocky9 machine that allow you to log in with ssh after reboot to unlock luks encrypted root.
+
 ## dracut-sshd setup for RHEL9 / Rocky9
 This setup is tested on a Rocky Linux 9 machine with encrypted disk set up during install.
 
